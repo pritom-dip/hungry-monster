@@ -4,7 +4,7 @@ const submitUserInput = () => {
     if (inputValue !== '') {
         document.getElementById("warningText").innerText = "";
         document.getElementById("ingrediendWrapper").style.display = "none";
-        fetchApiData(inputValue);
+        getAllMealsData(inputValue);
     } else {
         document.getElementById("warningText").innerText = "Please input value first and then submit.";
         document.getElementById("allMeals").innerText = "";
@@ -12,7 +12,7 @@ const submitUserInput = () => {
 }
 
 // Fetch api data with input value
-const fetchApiData = inputValue => {
+const getAllMealsData = inputValue => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
         .then(res => res.json())
         .then(data => displayMealsToUser(data.meals))
@@ -44,7 +44,7 @@ const displayMealsToUser = meals => {
     if (meals !== null) {
         meals.forEach(meal => {
             const childElement = `
-            <div onclick=fetchSingleMealDetails('${meal.idMeal}') class="card me-4 mt-4" style="width: 16rem; padding: 0px;">
+            <div onclick=getSingleMealDetails('${meal.idMeal}') class="card me-4 mt-4" style="width: 16rem; padding: 0px;">
                 <img src="${meal.strMealThumb}">
                 <div class="card-body text-center">
                     <h5 class="card-title">${meal.strMeal}</h5>
@@ -60,7 +60,7 @@ const displayMealsToUser = meals => {
 
 // Fetching single meals details information by id
 
-const fetchSingleMealDetails = (mealId) => {
+const getSingleMealDetails = (mealId) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
         .then(res => res.json())
         .then(data => displaySingleMealData(data.meals[0]))
