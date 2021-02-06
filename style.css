@@ -4,3 +4,9 @@
 #ingrediendWrapper {
     display: none;
 }
+
+#allMeals .singleMeal{
+    width: 16rem; 
+    padding: 0px;
+    cursor:pointer;
+}

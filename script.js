@@ -44,7 +44,7 @@ const displayMealsToUser = meals => {
     if (meals !== null) {
         meals.forEach(meal => {
             const childElement = `
-            <div onclick=getSingleMealDetails('${meal.idMeal}') class="card me-4 mt-4" style="width: 16rem; padding: 0px;cursor:pointer;">
+            <div onclick=getSingleMealDetails('${meal.idMeal}') class="card me-4 mt-4 singleMeal">
                 <img src="${meal.strMealThumb}">
                 <div class="card-body text-center">
                     <h5 class="card-title">${meal.strMeal}</h5>
