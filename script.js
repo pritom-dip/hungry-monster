@@ -1,9 +1,9 @@
 // submit user input data on clicking submit button
 const submitUserInput = () => {
     const inputValue = document.getElementById("mealName").value;
+    document.getElementById("ingrediendWrapper").style.display = "none";
     if (inputValue !== '') {
         document.getElementById("warningText").innerText = "";
-        document.getElementById("ingrediendWrapper").style.display = "none";
         getAllMealsData(inputValue);
     } else {
         document.getElementById("warningText").innerText = "Please input value first and then submit.";
