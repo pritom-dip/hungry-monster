@@ -2,10 +2,12 @@
 const submitUserInput = () => {
     const inputValue = document.getElementById("mealName").value;
     if (inputValue !== '') {
-        fetchApiData(inputValue);
         document.getElementById("warningText").innerText = "";
+        document.getElementById("ingrediendWrapper").style.display = "none";
+        fetchApiData(inputValue);
     } else {
         document.getElementById("warningText").innerText = "Please input value first and then submit.";
+        document.getElementById("allMeals").innerText = "";
     }
 }
 
