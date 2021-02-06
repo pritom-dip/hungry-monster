@@ -1,0 +1,6 @@
+#ingrediendWrapper img{
+    width: 100%;
+}
+#ingrediendWrapper {
+    display: none;
+}
