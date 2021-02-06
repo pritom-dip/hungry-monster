@@ -73,6 +73,7 @@ const getSingleMealDetails = (mealId) => {
 // Display single meal data to all user
 
 const displaySingleMealData = meal => {
+    document.getElementById("ingredientTitle").innerText = `Ingredient Lists of ${meal.strMeal}:`;
     const ingredientParentDiv = document.getElementById("ingrediendWrapper");
     const ingredientImg = document.getElementById("ingredientImage");
     ingredientImg.setAttribute("src", meal.strMealThumb);
