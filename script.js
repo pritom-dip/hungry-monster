@@ -9,7 +9,7 @@ const submitUserInput = () => {
     }
 }
 
-// Fet api data with input value
+// Fetch api data with input value
 const fetchApiData = inputValue => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
         .then(res => res.json())
@@ -23,7 +23,7 @@ const fetchApiData = inputValue => {
 };
 
 
-// Display error msg to user
+// Display error message to user
 const showingErrorMsgToUser = (parentDiv, message) => {
     const errorMsg = `
         <div class="me-4 mt-4">
